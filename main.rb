@@ -32,4 +32,38 @@ class Main
       return false
     end
   end
+  
+  def add_new_record
+    if highest.empty?
+      for i in 0..9
+        if highest(i) == ""
+          break
+        end
+        highest(i) = score
+      end
+    elsif highest(9) < score
+      highest(9) = score
+      sort.highest
+    end
+  end
+  
+  def self.empty?
+    check = true
+    while check = true
+      for s in 0..9
+        if self[s] == ""
+          check = true
+        else
+          check = false
+          break
+        end
+      end
+    end
+    if check = true
+      return true
+    else
+      return false
+    end
+  end
+
 end
