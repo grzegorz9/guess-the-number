@@ -32,4 +32,8 @@ class Main
       return false
     end
   end
+  
+  def records
+    
+  end
 end

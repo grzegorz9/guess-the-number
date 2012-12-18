@@ -1,1 +1,4 @@
 2718281828878781
+Guess the Number v. 0.0.1
+Commands:
+-- 'help' displays this manual
