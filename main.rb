@@ -15,8 +15,7 @@ end
 
 def process(cmnd)
   if cmnd == "play"
-    puts "Started a new game"
-    puts "Game Over"
+    single_game
   elsif cmnd == "records"
     puts "Display the records from a file"
   elsif cmnd == "options"
@@ -70,4 +69,29 @@ def self.empty?
   else
     return false
   end
+end
+
+def single_game
+  puts "Started a new game"
+  count = 0
+  answer = 0
+  number = Random.new
+  number.rand(1..5)
+  number = number.to
+    while answer != number
+      puts "What is your guess?\n"
+      answer = gets.chomp()
+      answer = answer.to_i
+      if answer < number
+        puts "The number is bigger.\n"
+      elsif answer > number
+        puts "The number is smaller.\n"
+      end
+      count = count + 1
+    end
+    if answer == number
+      puts "Congratulations! You have guessed the number!"
+      puts "It took you " + count + " tries to guess it."
+    end
+  puts "Game Over"
 end
